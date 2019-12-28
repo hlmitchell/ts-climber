@@ -16,12 +16,12 @@ app.get('/', (req, res) => {
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}, (err) => {
+}, (err: Error) => {
   if (err) console.error(err);
   else console.log('Connected to db...');
 });
 
-app.listen(port, (err) => {
+app.listen(port, (err: Error) => {
   if (err) console.error(err);
   else console.log(`server running on ${port}...`);
 });
